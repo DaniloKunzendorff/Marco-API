@@ -1,0 +1,92 @@
+(1) /POST / funcionario/login
+
+request
+{
+    "email": "",
+    "senha": ""
+}
+
+response
+{
+    "id": 0,
+    "email": "",
+}
+
+(2) /POST / registro/nova
+
+request
+{
+        "cliente": "",
+        "telefone": ,
+        "Data":"" ,
+        "pessoas" 0,
+        "status": ""
+}
+
+response
+{
+    "id": 0,
+    "cliente"
+    "telefone":,
+    "Data":"",
+    "pessoas" 0,
+    "status": ""
+}
+
+
+
+(3) POST  /reservas/pendencias
+request
+{
+        "cliente": "",
+        "telefone": ,
+        "Data":"" ,
+        "pessoas" 0,
+        "status": ""
+}
+
+response
+{
+    "id": 0,
+    "cliente"
+    "telefone":,
+    "Data":"",
+    "pessoas" 0,
+    "status": ""
+}
+
+(4) POST    /confirmar/reservas
+
+request
+{
+    "reservas": 0
+}
+
+response
+{
+    "id": 0,
+    "reservas" 0
+}
+
+
+(5) POST /alterar/reservas
+
+request
+{
+    "cliente": "",
+    "telefone": "",
+    "Data": "",
+    "pessoas": 0,
+    "status":""
+}
+
+response
+{
+    "id":0,
+    "cliente": "",
+    "telefone": "",
+    "Data": "",
+    "pessoas": 0,
+    "status":"" 
+}
+
