@@ -1,31 +1,31 @@
-(1) /POST / funcionario/login
+(1) /POST       /funcionario/login
 
-request
+request body
 {
     "email": "",
     "senha": ""
 }
 
-response
+response(200)
 {
     "id": 0,
     "email": "",
 }
 
-(2) /POST / registro/nova
+/////////////////////////////////////////////////////
+(2) /POST       /reserva/nova
 
-request
+request body
 {
         "cliente": "",
         "telefone": ,
-        "Data":"" ,
+        "data":"" ,
         "pessoas" 0,
         "status": ""
 }
 
-response
+response(200)
 {
-    "id": 0,
     "cliente"
     "telefone":,
     "Data":"",
@@ -34,45 +34,41 @@ response
 }
 
 
+/////////////////////////////////////////////////////
+(3) POST        /reserva/:status
 
-(3) POST  /reservas/pendencias
-request
-{
-        "cliente": "",
-        "telefone": ,
-        "Data":"" ,
+request route
+
+response (200)
+[
+    {
+        "id": 0,
+        "cliente",
+        "Data":"",
         "pessoas" 0,
         "status": ""
-}
+    }
+]
 
-response
-{
+/////////////////////////////////////////////////////
+(4) delete      /reserva/confirmar/:id
+
+response(204)
+
+
+/////////////////////////////////////////////////////
+(5) delete      /reserva/remover/:id
+
+response (204)
+-- sem conteúdo
+
+
+/////////////////////////////////////////////////////
+(6) Put       /reserva/alterar/:id
+
+request 
+{   
     "id": 0,
-    "cliente"
-    "telefone":,
-    "Data":"",
-    "pessoas" 0,
-    "status": ""
-}
-
-(4) POST    /confirmar/reservas
-
-request
-{
-    "reservas": 0
-}
-
-response
-{
-    "id": 0,
-    "reservas" 0
-}
-
-
-(5) POST /alterar/reservas
-
-request
-{
     "cliente": "",
     "telefone": "",
     "Data": "",
@@ -80,13 +76,6 @@ request
     "status":""
 }
 
-response
-{
-    "id":0,
-    "cliente": "",
-    "telefone": "",
-    "Data": "",
-    "pessoas": 0,
-    "status":"" 
-}
+response (204)
+-- sem conteúdo
 

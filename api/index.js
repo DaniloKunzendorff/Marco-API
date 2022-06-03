@@ -1,18 +1,18 @@
+import express from 'express'
+import cors from 'cors'
 import 'dotenv/config'
 
-import { con } from './repository/connection.js'
-import { express } from 'express'
-import cors from 'cors'
+import reservaController from './src/controller/reservaController.js'
+import funcionarioController from './src/controller/funcionarioController.js'
 
 const server = express();
 server.use(cors());
-server.use(express.json())
+server.use(express.json());
 
 
 
+//Endpoits Config
+server.use(reservaController);
+server.use(funcionarioController);
 
-
-
-
-
-server.listen(process.env.PORT, () => console.log(`API CONECTADO NA PORTA ${process.env.PORT}`))
+server.listen (process.env.PORT, () => console.log(`API online na porta ${process.env.PORT}`))
