@@ -44,17 +44,18 @@ server.get('/reserva/:status', async (req, resp) => {
 })
 
 
-server.delete('/reserva/confirmar/:id', async (req, resp) => {
+server.put('/reserva/confirmar/:id', async (req, resp) => {
     try {
         const {id} = req.params;
-        const RESPOSTA = await confirmarReserva(id);
-        if(RESPOSTA != 1)
-            throw new Error('Reserva não pode ser concluída.')
-        
-        resp.status(204).send();
+        const reserva = req.body;
+
+        const resposta = await confirmarReserva(id);
+        resp.status(200).send({
+            Resposta: "Reseva concluída"
+        })
     } catch (err) {
         resp.status(400).send({
-            Erro: err.message
+            erro: err.message
         })
     }
 })
@@ -81,6 +82,9 @@ server.put('/reserva/alterar/:id', async (req, resp) => {
         const reserva = req.body;
 
         const resposta = await alterarReserva(id, reserva);
+        resp.status(200).send({
+            Resposta: "Reseva alterada"
+        })
     } catch (err) {
         resp.status(400).send({
             erro: err.message

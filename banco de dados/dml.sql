@@ -57,7 +57,9 @@ where
 
 -- CSU04: confirmar reserva
 
-delete from tb_reserva where id_reserva = 3;
+update tb_reserva
+   set ds_status   = concluído
+ where id_reserva  = ?;
 
 -- CSU05: remover reserva
 

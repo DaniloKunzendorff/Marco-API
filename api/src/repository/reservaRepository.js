@@ -34,13 +34,12 @@ export async function removerReserva(id) {
 
 
 
-export async function confirmarReserva(id) {
-    const comando = `delete 
-                     from tb_reserva 
-                     where id_reserva = ?`;
+export async function confirmarReserva(id, reserva) {
+    const comando = `update tb_reserva
+                        set ds_status   = 'concluído'
+                      where id_reserva  = ?`
     const [RESPOSTA] = await con.query(comando, [id]);
     return RESPOSTA.affectedRows;
-
 }
 
 export async function alterarReserva(id, reserva) {
